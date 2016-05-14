@@ -9,4 +9,4 @@
 
 #pragma once
 
-#include "ILogger.hpp"
+#include "Logger.hpp"

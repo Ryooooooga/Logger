@@ -9,30 +9,54 @@
 
 #pragma once
 
+#include <string>
 #include "LogLevel.hpp"
 
-namespace Bell { namespace Logger {
+namespace Bell { namespace Log {
 
 	struct LogEntry;
 
-	class BaseLogger
+	class Logger
 	{
+		LogLevel level_;
+
 	public:
-		virtual ~BaseLogger() noexcept =default;
+		virtual ~Logger() noexcept =default;
+
+		template <typename... Args>
+		void trace(std::string format, Args&&... args);
+
+		template <typename... Args>
+		void debug(std::string format, Args&&... args);
+
+		template <typename... Args>
+		void info(std::string format, Args&&... args);
+
+		template <typename... Args>
+		void warning(std::string format, Args&&... args);
+
+		template <typename... Args>
+		void error(std::string format, Args&&... args);
+
+		template <typename... Args>
+		void fatal(std::string format, Args&&... args);
+
+		template <typename... Args>
+		void write(LogLevel level, std::string format, Args&&... args);
 
 		/**
 		 * @brief      ログ出力レベルの変更
 		 *
 		 * @param[in]  level  設定するログレベル
 		 */
-		virtual void level(LogLevel level) noexcept =0;
+		void level(LogLevel level) noexcept;
 
 		/**
 		 * @brief      現在のログ出力の取得
 		 *
 		 * @return     ログレベル
 		 */
-		virtual LogLevel level() const noexcept =0;
+		LogLevel level() const noexcept;
 
 	protected:
 		/**

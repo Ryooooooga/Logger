@@ -11,7 +11,7 @@
 
 #include <cstdint>
 
-namespace Bell { namespace Logger {
+namespace Bell { namespace Log {
 
 	/**
 	 * @brief      ログ出力レベル

@@ -7,23 +7,12 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 //=====================================================================
 
-#pragma once
+#include <gtest/gtest.h>
 
-#include <string>
-#include <thread>
-#include "LogLevel.hpp"
+#pragma comment(lib, "gtest/gtest_x86_d.lib")
 
-namespace Bell { namespace Logger {
-
-	/**
-	 * @brief      ログ出力情報
-	 */
-	struct LogEntry
-	{
-		LogLevel		level;
-		double			timestamp;
-		std::thread::id	threadId;
-		std::string		message;
-	};
-
-}}	//	namespace Bell::Logger
+int main(int argc, char** argv)
+{
+	testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}

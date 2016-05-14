@@ -146,10 +146,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Bell\Logger\BaseLogger.hpp" />
-    <ClInclude Include="Bell\Logger\LogEntry.hpp" />
-    <ClInclude Include="Bell\Logger\LogLevel.hpp" />
-    <ClInclude Include="Bell\Logger\NullLogger.hpp" />
+    <ClInclude Include="Bell\Log\LogEntry.hpp" />
+    <ClInclude Include="Bell\Log\Logger.hpp" />
+    <ClInclude Include="Bell\Log\LogLevel.hpp" />
+    <ClInclude Include="Bell\Log\NullLogger.hpp" />
     <ClInclude Include="Bell\Timer\Stopwatch.hpp" />
     <ClInclude Include="Lib\fmt\format.h" />
     <ClInclude Include="Lib\fmt\ostream.h" />
