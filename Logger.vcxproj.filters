@@ -15,6 +15,12 @@
     <Filter Include="Bell\Logger">
       <UniqueIdentifier>{a2837ad4-8a71-463e-81a0-ae29bdffba78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{0785bb84-ca7a-4679-9f7e-ec059fff3e7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\fmt">
+      <UniqueIdentifier>{66ecaf2b-c30f-4813-902d-d9b6735748c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bell\Timer\Stopwatch.hpp">
@@ -26,5 +32,36 @@
     <ClInclude Include="Bell\Logger\NullLogger.hpp">
       <Filter>Bell\Logger</Filter>
     </ClInclude>
+    <ClInclude Include="Lib\fmt\ostream.h">
+      <Filter>Lib\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\fmt\posix.h">
+      <Filter>Lib\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\fmt\time.h">
+      <Filter>Lib\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\fmt\format.h">
+      <Filter>Lib\fmt</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Lib\fmt\posix.cc">
+      <Filter>Lib\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\fmt\format.cc">
+      <Filter>Lib\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\fmt\ostream.cc">
+      <Filter>Lib\fmt</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\fmt\README.rst">
+      <Filter>Lib\fmt</Filter>
+    </None>
+    <None Include="Lib\fmt\LICENSE.rst">
+      <Filter>Lib\fmt</Filter>
+    </None>
   </ItemGroup>
 </Project>

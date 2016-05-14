@@ -149,6 +149,19 @@
     <ClInclude Include="Bell\Logger\ILogger.hpp" />
     <ClInclude Include="Bell\Logger\NullLogger.hpp" />
     <ClInclude Include="Bell\Timer\Stopwatch.hpp" />
+    <ClInclude Include="Lib\fmt\format.h" />
+    <ClInclude Include="Lib\fmt\ostream.h" />
+    <ClInclude Include="Lib\fmt\posix.h" />
+    <ClInclude Include="Lib\fmt\time.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Lib\fmt\format.cc" />
+    <ClCompile Include="Lib\fmt\ostream.cc" />
+    <ClCompile Include="Lib\fmt\posix.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\fmt\LICENSE.rst" />
+    <None Include="Lib\fmt\README.rst" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
