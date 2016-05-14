@@ -9,8 +9,7 @@
 
 #pragma once
 
-#include <string>
-#include "LogLevel.hpp"
+#include "LogEntry.hpp"
 
 namespace Bell { namespace Log {
 
@@ -107,14 +106,14 @@ namespace Bell { namespace Log {
 		 *
 		 * @param[in]  level  設定するログレベル
 		 */
-		void level(LogLevel level) noexcept;
+		virtual void level(LogLevel level) noexcept;
 
 		/**
 		 * @brief      現在のログ出力の取得
 		 *
 		 * @return     ログレベル
 		 */
-		LogLevel level() const noexcept;
+		virtual LogLevel level() const noexcept;
 
 	protected:
 		/**

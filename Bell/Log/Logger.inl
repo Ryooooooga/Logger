@@ -9,6 +9,8 @@
 
 #pragma once
 
+#include <fmt/format.h>
+
 namespace Bell { namespace Log {
 
 	//	trace
@@ -54,7 +56,15 @@ namespace Bell { namespace Log {
 	}
 
 	//	ログ出力
-
+	template <typename... Args>
+	void Logger::write(LogLevel level, std::string format, Args&&... args)
+	{
+		writeLogMessage(LogEntry {
+			level,
+			std::this_thread::get_id(),
+			fmt::format(format, std::forward<Args>(args)...),
+		});
+	}
 
 	//	出力レベル設定
 	inline void Logger::level(LogLevel level) noexcept
