@@ -70,5 +70,8 @@
     <None Include="Lib\fmt\LICENSE.rst">
       <Filter>Lib\fmt</Filter>
     </None>
+    <None Include="Bell\Log\Logger.inl">
+      <Filter>Bell\Log</Filter>
+    </None>
   </ItemGroup>
 </Project>

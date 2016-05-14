@@ -163,6 +163,7 @@
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Bell\Log\Logger.inl" />
     <None Include="Lib\fmt\LICENSE.rst" />
     <None Include="Lib\fmt\README.rst" />
   </ItemGroup>
