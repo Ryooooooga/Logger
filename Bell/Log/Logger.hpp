@@ -13,8 +13,9 @@
 
 namespace Bell { namespace Log {
 
-	struct LogEntry;
-
+	/**
+	 * @brief      ロガー基底
+	 */
 	class Logger
 	{
 		LogLevel level_;

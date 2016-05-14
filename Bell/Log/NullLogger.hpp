@@ -13,7 +13,9 @@
 
 namespace Bell { namespace Log {
 
-	
+	/**
+	 * @brief      何もしないロガー
+	 */
 	class NullLogger
 		: public Logger
 	{
