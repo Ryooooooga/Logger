@@ -146,6 +146,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bell\Logger\ILogger.hpp" />
+    <ClInclude Include="Bell\Logger\NullLogger.hpp" />
+    <ClInclude Include="Bell\Timer\Stopwatch.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
