@@ -19,10 +19,6 @@ namespace Bell { namespace Log {
 	class NullLogger
 		: public Logger
 	{
-	public:
-		void level(LogLevel) noexcept override {}
-		LogLevel level() const noexcept override { return LogLevel::Off; }
-
 	protected:
 		void writeLogMessage(const LogEntry&) override {}
 	};

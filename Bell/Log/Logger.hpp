@@ -18,9 +18,21 @@ namespace Bell { namespace Log {
 	 */
 	class Logger
 	{
-		LogLevel level_;
+		LogLevel level_ = LogLevel::All;
 
 	public:
+		/**
+		 * @brief      Logger ctor
+		 *
+		 * @param[in]  level  デフォルト出力レベル
+		 */
+		explicit Logger(LogLevel level = LogLevel::All) noexcept
+			: level_(level) {}
+
+
+		/**
+		 * @brief      Logger dtor
+		 */
 		virtual ~Logger() noexcept =default;
 
 		/**
@@ -107,14 +119,14 @@ namespace Bell { namespace Log {
 		 *
 		 * @param[in]  level  設定するログレベル
 		 */
-		virtual void level(LogLevel level) noexcept;
+		void level(LogLevel level) noexcept;
 
 		/**
 		 * @brief      現在のログ出力の取得
 		 *
 		 * @return     ログレベル
 		 */
-		virtual LogLevel level() const noexcept;
+		LogLevel level() const noexcept;
 
 	protected:
 		/**
