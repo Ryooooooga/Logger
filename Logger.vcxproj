@@ -146,7 +146,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Bell\Logger\ILogger.hpp" />
+    <ClInclude Include="Bell\Logger\BaseLogger.hpp" />
+    <ClInclude Include="Bell\Logger\LogEntry.hpp" />
+    <ClInclude Include="Bell\Logger\LogLevel.hpp" />
     <ClInclude Include="Bell\Logger\NullLogger.hpp" />
     <ClInclude Include="Bell\Timer\Stopwatch.hpp" />
     <ClInclude Include="Lib\fmt\format.h" />
@@ -158,6 +160,7 @@
     <ClCompile Include="Lib\fmt\format.cc" />
     <ClCompile Include="Lib\fmt\ostream.cc" />
     <ClCompile Include="Lib\fmt\posix.cc" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Lib\fmt\LICENSE.rst" />

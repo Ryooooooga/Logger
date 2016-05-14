@@ -26,9 +26,6 @@
     <ClInclude Include="Bell\Timer\Stopwatch.hpp">
       <Filter>Bell\Timer</Filter>
     </ClInclude>
-    <ClInclude Include="Bell\Logger\ILogger.hpp">
-      <Filter>Bell\Logger</Filter>
-    </ClInclude>
     <ClInclude Include="Bell\Logger\NullLogger.hpp">
       <Filter>Bell\Logger</Filter>
     </ClInclude>
@@ -44,6 +41,15 @@
     <ClInclude Include="Lib\fmt\format.h">
       <Filter>Lib\fmt</Filter>
     </ClInclude>
+    <ClInclude Include="Bell\Logger\LogLevel.hpp">
+      <Filter>Bell\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Bell\Logger\LogEntry.hpp">
+      <Filter>Bell\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Bell\Logger\BaseLogger.hpp">
+      <Filter>Bell\Logger</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lib\fmt\posix.cc">
@@ -54,6 +60,9 @@
     </ClCompile>
     <ClCompile Include="Lib\fmt\ostream.cc">
       <Filter>Lib\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Bell</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

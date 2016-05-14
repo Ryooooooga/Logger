@@ -9,4 +9,21 @@
 
 #pragma once
 
+#include <string>
+#include <thread>
+#include "LogLevel.hpp"
 
+namespace Bell { namespace Logger {
+
+	/**
+	 * @brief      ログ出力情報
+	 */
+	struct LogEntry
+	{
+		LogLevel		level;
+		double			timestamp;
+		std::thread::id	threadId;
+		std::string		message;
+	};
+
+}}	//	namespace Bell::Logger
