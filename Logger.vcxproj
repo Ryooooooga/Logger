@@ -150,6 +150,7 @@
     <ClInclude Include="Bell\Log\LogEntry.hpp" />
     <ClInclude Include="Bell\Log\Logger.hpp" />
     <ClInclude Include="Bell\Log\LogLevel.hpp" />
+    <ClInclude Include="Bell\Log\MultiLogger.hpp" />
     <ClInclude Include="Bell\Log\NullLogger.hpp" />
     <ClInclude Include="Bell\Log\StreamLogger.hpp" />
     <ClInclude Include="Bell\Timer\Stopwatch.hpp" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClCompile Include="Bell\Log\FileLogger.cpp" />
     <ClCompile Include="Bell\Log\LogLevel.cpp" />
+    <ClCompile Include="Bell\Log\MultiLogger.cpp" />
     <ClCompile Include="Bell\Log\StreamLogger.cpp" />
     <ClCompile Include="Lib\fmt\format.cc" />
     <ClCompile Include="Lib\fmt\ostream.cc" />

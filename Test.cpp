@@ -9,15 +9,25 @@
 
 #include <gtest/gtest.h>
 #include "Bell/Log/StreamLogger.hpp"
+#include "Bell/Log/MultiLogger.hpp"
 
 #pragma comment(lib, "gtest/gtest_x86_d.lib")
 
 int main(int argc, char** argv)
 {
+	auto mult = Bell::Log::MultiLogger();
 	auto cout = Bell::Log::StreamLogger::stdErr(Bell::Log::LogLevel::Debug);
 	auto cerr = Bell::Log::StreamLogger::stdErr(Bell::Log::LogLevel::Info);
-	cerr->debug(u8"hoge");
-	cerr->info(u8"piyo");
+
+	mult.insertLogger("out", cout);
+	mult.insertLogger("err", cerr);
+	mult.debug(u8"hoge");
+	mult.info(u8"piyo");
+	mult.removeLogger("err");
+	mult.debug(u8"fuga");
+	mult.info(u8"hogera");
+
+
 	testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }
