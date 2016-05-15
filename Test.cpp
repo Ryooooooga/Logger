@@ -8,15 +8,16 @@
 //=====================================================================
 
 #include <gtest/gtest.h>
-#include "Bell/Log/FileLogger.hpp"
+#include "Bell/Log/StreamLogger.hpp"
 
 #pragma comment(lib, "gtest/gtest_x86_d.lib")
 
 int main(int argc, char** argv)
 {
-	Bell::Log::FileLogger a("a.txt");
-	a.fatal(u8"hoge");
-
+	auto cout = Bell::Log::StreamLogger::stdErr(Bell::Log::LogLevel::Debug);
+	auto cerr = Bell::Log::StreamLogger::stdErr(Bell::Log::LogLevel::Info);
+	cerr->debug(u8"hoge");
+	cerr->info(u8"piyo");
 	testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }

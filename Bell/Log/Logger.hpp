@@ -114,6 +114,13 @@ namespace Bell { namespace Log {
 		void write(LogLevel level, std::string format, Args&&... args);
 
 		/**
+		 * @brief      ログ出力
+		 *
+		 * @param[in]  entry  出力する情報
+		 */
+		void write(const LogEntry& entry);
+
+		/**
 		 * @brief      ログ出力レベルの変更
 		 *
 		 * @param[in]  level  設定するログレベル

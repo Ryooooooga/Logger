@@ -60,12 +60,21 @@ namespace Bell { namespace Log {
 	template <typename... Args>
 	void Logger::write(LogLevel level, std::string format, Args&&... args)
 	{
-		writeLogMessage(LogEntry {
+		write(LogEntry {
 			level,
 			Timer::HiresolutionStopwatch::globalStopwatch().elapsed(),
 			std::this_thread::get_id(),
 			fmt::format(format, std::forward<Args>(args)...),
 		});
+	}
+
+	//	出力
+	inline void Logger::write(const LogEntry& entry)
+	{
+		if (entry.level >= level_)
+		{
+			writeLogMessage(entry);
+		}
 	}
 
 	//	出力レベル設定
