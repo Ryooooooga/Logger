@@ -13,38 +13,48 @@
 namespace Bell { namespace Log {
 
 	namespace {
-		std::shared_mutex mutex_;
-		std::shared_ptr<Logger> globalLogger_ = StreamLogger::stdErr();
+
+		//	mutex
+		std::shared_mutex mutex;
+
+		//	グローバルインスタンス
+		std::shared_ptr<Logger> globalInstance;
+
+		//	グローバルインスタンスの取得
+		std::shared_ptr<Logger> getGlobalInstance()
+		{
+			static std::shared_ptr<Logger> defaultInstance = StreamLogger::stdErr();
+			return globalInstance ? globalInstance : defaultInstance;
+		}
+
 	}
 
 	//	グローバルロガーの取得
 	std::shared_ptr<Logger> globalLogger() noexcept
 	{
-		auto lock = std::shared_lock<std::shared_mutex> { mutex_ };
-		return globalLogger_;
+		auto lock = std::shared_lock<std::shared_mutex> { mutex };
+		return getGlobalInstance();
 	}
 
 	//	グローバルロガーの設定
 	void globalLogger(std::shared_ptr<Logger> logger) noexcept
 	{
-		assert(logger);
-
-		auto lock = std::unique_lock<std::shared_mutex> { mutex_ };
-		globalLogger_ = logger;
+		auto lock = std::unique_lock<std::shared_mutex> { mutex };
+		getGlobalInstance() = logger;
 	}
 
 	//	出力レベルの取得
 	LogLevel globalLogLevel() noexcept
 	{
-		auto lock = std::shared_lock<std::shared_mutex> { mutex_ };
-		return globalLogger_->level();
+		auto lock = std::shared_lock<std::shared_mutex> { mutex };
+		return getGlobalInstance()->level();
 	}
 
 	//	出力レベルの設定
 	void globalLogLevel(LogLevel level) noexcept
 	{
-		auto lock = std::shared_lock<std::shared_mutex> { mutex_ };
-		globalLogger_->level(level);
+		auto lock = std::shared_lock<std::shared_mutex> { mutex };
+		getGlobalInstance()->level(level);
 	}
 
 }}	//	namespace Bell::Log
