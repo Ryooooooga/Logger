@@ -53,6 +53,9 @@
     <ClInclude Include="Bell\Log\StreamLogger.hpp">
       <Filter>Bell\Log</Filter>
     </ClInclude>
+    <ClInclude Include="Bell\Log\FileLogger.hpp">
+      <Filter>Bell\Log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lib\fmt\posix.cc">
@@ -69,6 +72,9 @@
       <Filter>Bell\Log</Filter>
     </ClCompile>
     <ClCompile Include="Bell\Log\LogLevel.cpp">
+      <Filter>Bell\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Bell\Log\FileLogger.cpp">
       <Filter>Bell\Log</Filter>
     </ClCompile>
   </ItemGroup>

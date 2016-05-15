@@ -8,11 +8,15 @@
 //=====================================================================
 
 #include <gtest/gtest.h>
+#include "Bell/Log/FileLogger.hpp"
 
 #pragma comment(lib, "gtest/gtest_x86_d.lib")
 
 int main(int argc, char** argv)
 {
+	Bell::Log::FileLogger a("a.txt");
+	a.fatal(u8"hoge");
+
 	testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }

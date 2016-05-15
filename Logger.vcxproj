@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bell\Log\FileLogger.hpp" />
     <ClInclude Include="Bell\Log\LogEntry.hpp" />
     <ClInclude Include="Bell\Log\Logger.hpp" />
     <ClInclude Include="Bell\Log\LogLevel.hpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Lib\fmt\time.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bell\Log\FileLogger.cpp" />
     <ClCompile Include="Bell\Log\LogLevel.cpp" />
     <ClCompile Include="Bell\Log\StreamLogger.cpp" />
     <ClCompile Include="Lib\fmt\format.cc" />
