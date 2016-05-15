@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include <cstdint>
+#include <ostream>
 
 namespace Bell { namespace Log {
 
@@ -28,5 +28,8 @@ namespace Bell { namespace Log {
 		Fatal,
 		Off,
 	};
+
+	//	operator <<
+	std::ostream& operator <<(std::ostream& stream, LogLevel level);
 
 }}	//	namespace Bell::Logger
