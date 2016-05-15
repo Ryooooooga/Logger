@@ -18,11 +18,10 @@ namespace Bell { namespace Log {
 	//	挿入
 	void MultiLogger::insertLogger(std::string name, std::shared_ptr<Logger> logger)
 	{
-		auto lock = writeLock();
-
 		assert(logger);
 		assert(logger.get() != this);
 
+		auto lock = writeLock();
 		loggers_.emplace(std::move(name), std::move(logger));
 	}
 

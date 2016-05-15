@@ -29,18 +29,18 @@ namespace Bell { namespace Log {
 	void globalLogger(std::shared_ptr<Logger> logger) noexcept;
 
 	/**
-	 * @brief      スレッドローカルロガーの取得
+	 * @brief      グローバルログ出力レベルの取得
 	 *
-	 * @return     スレッドローカルロガー
+	 * @return     出力レベル
 	 */
-	std::shared_ptr<Logger> threadLocalLogger() noexcept;
+	LogLevel globalLogLevel() noexcept;
 
 	/**
-	 * @brief      グローバルロガーの設定
+	 * @brief      グローバルログ出力レベルの取得
 	 *
-	 * @param[in]  logger  設定するロガー
+	 * @param[in]  level  出力レベル
 	 */
-	void threadLocalLogger(std::shared_ptr<Logger> logger) noexcept;
+	void globalLogLevel(LogLevel level) noexcept;
 
 	/**
 	 * @brief      trace出力

@@ -8,15 +8,13 @@
 //=====================================================================
 
 #include "Log.hpp"
-#include "NullLogger.hpp"
 #include "StreamLogger.hpp"
 
 namespace Bell { namespace Log {
 
 	namespace {
 		std::shared_mutex mutex_;
-		std::shared_ptr<Logger> globalLogger_ = std::make_shared<NullLogger>();
-		thread_local std::shared_ptr<Logger> threadLocalLogger_ = StreamLogger::stdErr();
+		std::shared_ptr<Logger> globalLogger_ = StreamLogger::stdErr();
 	}
 
 	//	グローバルロガーの取得
@@ -29,21 +27,24 @@ namespace Bell { namespace Log {
 	//	グローバルロガーの設定
 	void globalLogger(std::shared_ptr<Logger> logger) noexcept
 	{
+		assert(logger);
+
 		auto lock = std::unique_lock<std::shared_mutex> { mutex_ };
 		globalLogger_ = logger;
 	}
 
-
-	//	スレッドローカルロガーの設定
-	std::shared_ptr<Logger> threadLocalLogger() noexcept
+	//	出力レベルの取得
+	LogLevel globalLogLevel() noexcept
 	{
-		return threadLocalLogger_;
+		auto lock = std::shared_lock<std::shared_mutex> { mutex_ };
+		return globalLogger_->level();
 	}
 
-	//	スレッドローカルロガーの設定
-	void threadLocalLogger(std::shared_ptr<Logger> logger) noexcept
+	//	出力レベルの設定
+	void globalLogLevel(LogLevel level) noexcept
 	{
-		threadLocalLogger_ = logger;
+		auto lock = std::shared_lock<std::shared_mutex> { mutex_ };
+		globalLogger_->level(level);
 	}
 
 }}	//	namespace Bell::Log

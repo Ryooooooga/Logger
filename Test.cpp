@@ -15,16 +15,14 @@
 
 int main(int argc, char** argv)
 {
-	Bell::Log::FileLogger out("a.txt");
-
 	std::thread t1([&]() {
 		for (int i = 0; i < 100; i++)
-			out.trace("{}", i);
+			Bell::Log::trace("{}", i);
 	});
 
 	std::thread t2([&]() {
 		for (int i = 0; i < 100; i++)
-			out.fatal("{}", i);
+			Bell::Log::fatal("{}", i);
 	});
 
 	t1.join();

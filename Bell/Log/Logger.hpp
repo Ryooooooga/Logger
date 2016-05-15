@@ -16,8 +16,6 @@ namespace Bell { namespace Log {
 
 	/**
 	 * @brief      ロガー基底
-	 * 
-	 * Loggerとその派生クラスはスレッドセーフ
 	 */
 	class Logger
 	{

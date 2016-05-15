@@ -15,55 +15,55 @@ namespace Bell { namespace Log {
 	template <typename... Args>
 	void trace(std::string format, Args&&... args)
 	{
-		threadLocalLogger()->trace(std::move(format), std::forward<Args>(args)...);
+		globalLogger()->trace(std::move(format), std::forward<Args>(args)...);
 	}
 
 	//	debug
 	template <typename... Args>
 	void debug(std::string format, Args&&... args)
 	{
-		threadLocalLogger()->debug(std::move(format), std::forward<Args>(args)...);
+		globalLogger()->debug(std::move(format), std::forward<Args>(args)...);
 	}
 
 	//	info
 	template <typename... Args>
 	void info(std::string format, Args&&... args)
 	{
-		threadLocalLogger()->info(std::move(format), std::forward<Args>(args)...);
+		globalLogger()->info(std::move(format), std::forward<Args>(args)...);
 	}
 
 	//	warning
 	template <typename... Args>
 	void warning(std::string format, Args&&... args)
 	{
-		threadLocalLogger()->warning(std::move(format), std::forward<Args>(args)...);
+		globalLogger()->warning(std::move(format), std::forward<Args>(args)...);
 	}
 
 	//	error
 	template <typename... Args>
 	void error(std::string format, Args&&... args)
 	{
-		threadLocalLogger()->error(std::move(format), std::forward<Args>(args)...);
+		globalLogger()->error(std::move(format), std::forward<Args>(args)...);
 	}
 
 	//	fatal
 	template <typename... Args>
 	void fatal(std::string format, Args&&... args)
 	{
-		threadLocalLogger()->fatal(std::move(format), std::forward<Args>(args)...);
+		globalLogger()->fatal(std::move(format), std::forward<Args>(args)...);
 	}
 
 	//	ログ出力
 	template <typename... Args>
 	void write(LogLevel level, std::string format, Args&&... args)
 	{
-		threadLocalLogger()->write(level, std::move(format), std::forward<Args>(args)...);
+		globalLogger()->write(level, std::move(format), std::forward<Args>(args)...);
 	}
 
 	//	出力
 	inline void write(const LogEntry& entry)
 	{
-		threadLocalLogger()->write(entry);
+		globalLogger()->write(entry);
 	}
 
 }}	//	namespace Bell::Logger
