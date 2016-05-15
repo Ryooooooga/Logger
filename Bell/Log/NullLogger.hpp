@@ -19,6 +19,9 @@ namespace Bell { namespace Log {
 	class NullLogger
 		: public Logger
 	{
+	public:
+		using Logger::Logger;
+
 	protected:
 		void writeLogMessage(const LogEntry&) override {}
 	};
