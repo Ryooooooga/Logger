@@ -10,6 +10,7 @@
 #pragma once
 
 #include <fmt/format.h>
+#include "../Timer/Stopwatch.hpp"
 
 namespace Bell { namespace Log {
 
@@ -61,6 +62,7 @@ namespace Bell { namespace Log {
 	{
 		writeLogMessage(LogEntry {
 			level,
+			Timer::HiresolutionStopwatch::globalStopwatch().elapsed(),
 			std::this_thread::get_id(),
 			fmt::format(format, std::forward<Args>(args)...),
 		});

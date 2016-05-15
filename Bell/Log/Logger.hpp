@@ -29,7 +29,6 @@ namespace Bell { namespace Log {
 		explicit Logger(LogLevel level = LogLevel::All) noexcept
 			: level_(level) {}
 
-
 		/**
 		 * @brief      Logger dtor
 		 */
