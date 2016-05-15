@@ -50,6 +50,9 @@
     <ClInclude Include="Bell\Log\NullLogger.hpp">
       <Filter>Bell\Log</Filter>
     </ClInclude>
+    <ClInclude Include="Bell\Log\StreamLogger.hpp">
+      <Filter>Bell\Log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lib\fmt\posix.cc">
@@ -62,6 +65,12 @@
       <Filter>Lib\fmt</Filter>
     </ClCompile>
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="Bell\Log\StreamLogger.cpp">
+      <Filter>Bell\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Bell\Log\LogLevel.cpp">
+      <Filter>Bell\Log</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Lib\fmt\README.rst">
