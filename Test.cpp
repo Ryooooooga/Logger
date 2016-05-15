@@ -9,12 +9,27 @@
 
 #include <gtest/gtest.h>
 #include "Bell/Log/Log.hpp"
+#include "Bell/Log/FileLogger.hpp"
 
 #pragma comment(lib, "gtest/gtest_x86_d.lib")
 
 int main(int argc, char** argv)
 {
-	Bell::Log::debug("hoge");
+	Bell::Log::FileLogger out("a.txt");
+
+	std::thread t1([&]() {
+		for (int i = 0; i < 100; i++)
+			out.trace("{}", i);
+	});
+
+	std::thread t2([&]() {
+		for (int i = 0; i < 100; i++)
+			out.fatal("{}", i);
+	});
+
+	t1.join();
+	t2.join();
+
 	testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }

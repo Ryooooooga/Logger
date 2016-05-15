@@ -34,13 +34,14 @@ namespace Bell { namespace Log {
 	//	ストリーム
 	std::ostream& StreamLogger::stream() const noexcept
 	{
+		auto lock = readLock();
 		return stream_;
 	}
 
 	//	出力
 	void StreamLogger::writeLogMessage(const LogEntry& entry)
 	{
-		stream_ << fmt::format(u8"[{0:^8}][thread:{1:0>8x}]({2:>14.6f}) {3}", entry.level, (int)&entry.threadId, entry.timestamp, entry.message) << std::endl;
+		stream_ << fmt::format(u8"[{:^8}][thread:{:>8}]({:>14.6f}) {}", entry.level, entry.threadId, entry.timestamp, entry.message) << std::endl;
 	}
 
 }}	//	namespace Bell::Log

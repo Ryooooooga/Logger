@@ -14,6 +14,18 @@
 
 namespace Bell { namespace Log {
 
+	//	read lock
+	inline std::shared_lock<std::shared_mutex> Logger::readLock() const noexcept
+	{
+		return std::shared_lock<std::shared_mutex> { mutex_ };
+	}
+
+	//	write lock
+	inline std::unique_lock<std::shared_mutex> Logger::writeLock() const noexcept
+	{
+		return std::unique_lock<std::shared_mutex> { mutex_ };
+	}
+
 	//	trace
 	template <typename... Args>
 	void Logger::trace(std::string format, Args&&... args)
@@ -62,8 +74,8 @@ namespace Bell { namespace Log {
 	{
 		write(LogEntry {
 			level,
-			Timer::HiresolutionStopwatch::globalStopwatch().elapsed(),
 			std::this_thread::get_id(),
+			Timer::HiresolutionStopwatch::globalStopwatch().elapsed(),
 			fmt::format(format, std::forward<Args>(args)...),
 		});
 	}
@@ -71,6 +83,8 @@ namespace Bell { namespace Log {
 	//	出力
 	inline void Logger::write(const LogEntry& entry)
 	{
+		auto lock = writeLock();
+
 		if (entry.level >= level_)
 		{
 			writeLogMessage(entry);
@@ -80,12 +94,14 @@ namespace Bell { namespace Log {
 	//	出力レベル設定
 	inline void Logger::level(LogLevel level) noexcept
 	{
+		auto lock = writeLock();
 		level_ = level;
 	}
 
 	//	出力レベル取得
 	inline LogLevel Logger::level() const noexcept
 	{
+		auto lock = readLock();
 		return level_;
 	}
 

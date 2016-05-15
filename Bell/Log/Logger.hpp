@@ -9,6 +9,7 @@
 
 #pragma once
 
+#include <shared_mutex>
 #include "LogEntry.hpp"
 
 namespace Bell { namespace Log {
@@ -18,7 +19,14 @@ namespace Bell { namespace Log {
 	 */
 	class Logger
 	{
-		LogLevel level_ = LogLevel::All;
+		mutable std::shared_mutex mutex_;
+		LogLevel level_;
+
+	protected:
+		//	read lock
+		std::shared_lock<std::shared_mutex> readLock() const noexcept;
+		//	write lock
+		std::unique_lock<std::shared_mutex> writeLock() const noexcept;
 
 	public:
 		/**
@@ -27,7 +35,7 @@ namespace Bell { namespace Log {
 		 * @param[in]  level  デフォルト出力レベル
 		 */
 		explicit Logger(LogLevel level = LogLevel::All) noexcept
-			: level_(level) {}
+			: level_(level), mutex_() {}
 
 		/**
 		 * @brief      Logger dtor

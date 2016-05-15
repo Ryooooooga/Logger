@@ -7,7 +7,6 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 //=====================================================================
 
-#include <shared_mutex>
 #include "Log.hpp"
 #include "NullLogger.hpp"
 #include "StreamLogger.hpp"

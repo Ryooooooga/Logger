@@ -10,7 +10,6 @@
 #pragma once
 
 #include <string>
-#include <thread>
 #include "LogLevel.hpp"
 
 namespace Bell { namespace Log {
@@ -21,8 +20,8 @@ namespace Bell { namespace Log {
 	struct LogEntry
 	{
 		LogLevel		level;
-		double			timestamp;
 		std::thread::id	threadId;
+		double			timestamp;
 		std::string		message;
 	};
 
