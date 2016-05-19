@@ -72,10 +72,12 @@ namespace Bell { namespace Log {
 	template <typename... Args>
 	void Logger::write(LogLevel level, std::string format, Args&&... args)
 	{
+		static const Timer::HiresolutionStopwatch stopwatch;
+
 		write(LogEntry {
 			level,
 			std::this_thread::get_id(),
-			Timer::HiresolutionStopwatch::globalStopwatch().elapsed(),
+			stopwatch.elapsed(),
 			fmt::format(format, std::forward<Args>(args)...),
 		});
 	}
