@@ -35,7 +35,7 @@ namespace Bell { namespace Log {
 		 * @param[in]  level  デフォルト出力レベル
 		 */
 		explicit Logger(LogLevel level = LogLevel::All) noexcept
-			: level_(level), mutex_() {}
+			: mutex_(), level_(level) {}
 
 		/**
 		 * @brief      Logger dtor
