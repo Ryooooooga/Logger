@@ -9,7 +9,7 @@
 
 #include "LogLevel.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	//	operator <<
 	std::ostream& operator <<(std::ostream& stream, LogLevel level)
@@ -29,4 +29,4 @@ namespace Bell { namespace Log {
 		return stream;
 	}
 
-}}	//	namespace Bell::Logger
+}	//	namespace Bell::Logger

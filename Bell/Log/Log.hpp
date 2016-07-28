@@ -12,7 +12,7 @@
 #include <memory>
 #include "Logger.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	/**
 	 * @brief      グローバルロガーの取得
@@ -128,6 +128,6 @@ namespace Bell { namespace Log {
 	 */
 	void write(const LogEntry& entry);
 
-}}	//	namespace Bell::Log
+}	//	namespace Bell::Log
 
 #include "Log.inl"

@@ -13,7 +13,7 @@
 
 #include <boost/utility/string_ref.hpp>
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	//	標準エラー出力
 	std::shared_ptr<StreamLogger> StreamLogger::stdErr(LogLevel level)
@@ -44,4 +44,4 @@ namespace Bell { namespace Log {
 		stream_ << fmt::format(u8"[{:^8}][thread:{:>8}]({:>14.6f}) {}", entry.level, entry.threadId, entry.timestamp, entry.message) << std::endl;
 	}
 
-}}	//	namespace Bell::Log
+}	//	namespace Bell::Log

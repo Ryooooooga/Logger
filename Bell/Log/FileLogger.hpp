@@ -13,7 +13,7 @@
 #include <boost/utility/string_ref.hpp>
 #include "StreamLogger.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	/**
 	 * @brief      ファイルロガー
@@ -43,4 +43,4 @@ namespace Bell { namespace Log {
 		boost::string_ref fileName() const noexcept;
 	};
 
-}}	//	namespace Bell::Log
+}	//	namespace Bell::Log

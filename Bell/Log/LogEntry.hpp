@@ -12,7 +12,7 @@
 #include <string>
 #include "LogLevel.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	/**
 	 * @brief      ログ出力情報
@@ -25,4 +25,4 @@ namespace Bell { namespace Log {
 		std::string		message;
 	};
 
-}}	//	namespace Bell::Logger
+}	//	namespace Bell::Logger

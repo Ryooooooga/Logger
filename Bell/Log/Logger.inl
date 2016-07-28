@@ -12,7 +12,7 @@
 #include <fmt/format.h>
 #include "../Timer/Stopwatch.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	//	read lock
 	inline std::shared_lock<std::shared_mutex> Logger::readLock() const noexcept
@@ -107,4 +107,4 @@ namespace Bell { namespace Log {
 		return level_;
 	}
 
-}}	//	namespace Bell::Logger
+}	//	namespace Bell::Logger

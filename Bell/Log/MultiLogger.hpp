@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include "Logger.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	
 	class MultiLogger
@@ -48,4 +48,4 @@ namespace Bell { namespace Log {
 		void writeLogMessage(const LogEntry& entry) override;
 	};
 
-}}	//	namespace Bell::Log
+}	//	namespace Bell::Log

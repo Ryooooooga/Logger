@@ -9,7 +9,7 @@
 
 #include "MultiLogger.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	//	MultiLogger ctor
 	MultiLogger::MultiLogger(LogLevel level)
@@ -41,4 +41,4 @@ namespace Bell { namespace Log {
 		}
 	}
 
-}}	//	namespace Bell::Log
+}	//	namespace Bell::Log

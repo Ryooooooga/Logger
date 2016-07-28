@@ -10,7 +10,7 @@
 #include "Log.hpp"
 #include "StreamLogger.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	namespace {
 
@@ -57,4 +57,4 @@ namespace Bell { namespace Log {
 		getGlobalInstance()->level(level);
 	}
 
-}}	//	namespace Bell::Log
+}	//	namespace Bell::Log

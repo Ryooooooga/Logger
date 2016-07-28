@@ -9,7 +9,7 @@
 
 #pragma once
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	//	trace
 	template <typename... Args>
@@ -66,4 +66,4 @@ namespace Bell { namespace Log {
 		globalLogger()->write(entry);
 	}
 
-}}	//	namespace Bell::Logger
+}	//	namespace Bell::Logger

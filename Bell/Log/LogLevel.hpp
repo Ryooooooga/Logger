@@ -11,7 +11,7 @@
 
 #include <ostream>
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	/**
 	 * @brief      ログ出力レベル
@@ -32,4 +32,4 @@ namespace Bell { namespace Log {
 	//	operator <<
 	std::ostream& operator <<(std::ostream& stream, LogLevel level);
 
-}}	//	namespace Bell::Logger
+}	//	namespace Bell::Logger

@@ -9,7 +9,7 @@
 
 #include "FileLogger.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	//	FileLogger ctor
 	FileLogger::FileLogger(std::string path, LogLevel level)
@@ -29,4 +29,4 @@ namespace Bell { namespace Log {
 		return fileName_;
 	}
 
-}}	//	namespace Bell::Log
+}	//	namespace Bell::Log

@@ -11,7 +11,7 @@
 
 #include "Logger.hpp"
 
-namespace Bell { namespace Log {
+namespace Bell::Log {
 
 	/**
 	 * @brief      何もしないロガー
@@ -26,4 +26,4 @@ namespace Bell { namespace Log {
 		void writeLogMessage(const LogEntry&) override {}
 	};
 
-}}	//	namespace Bell::Log
+}	//	namespace Bell::Log
