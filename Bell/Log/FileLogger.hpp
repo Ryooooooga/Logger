@@ -10,7 +10,7 @@
 #pragma once
 
 #include <fstream>
-#include <boost/utility/string_ref.hpp>
+#include <boost/utility/string_view.hpp>
 #include "StreamLogger.hpp"
 
 namespace Bell::Log {
@@ -40,7 +40,7 @@ namespace Bell::Log {
 		 *
 		 * @return     ファイル名
 		 */
-		boost::string_ref fileName() const noexcept;
+		boost::string_view fileName() const noexcept;
 	};
 
 }	//	namespace Bell::Log

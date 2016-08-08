@@ -11,8 +11,6 @@
 #include <fmt/ostream.h>
 #include "StreamLogger.hpp"
 
-#include <boost/utility/string_ref.hpp>
-
 namespace Bell::Log {
 
 	//	標準エラー出力

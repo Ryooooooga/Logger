@@ -24,7 +24,7 @@ namespace Bell::Log {
 	}
 
 	//	ファイル名
-	boost::string_ref FileLogger::fileName() const noexcept
+	boost::string_view FileLogger::fileName() const noexcept
 	{
 		return fileName_;
 	}
